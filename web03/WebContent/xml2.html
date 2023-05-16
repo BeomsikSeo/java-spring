@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function() {
+			$.ajax({
+				url: "data/dataset2.xml",
+				success: function(doc) {
+					list = $(doc).find('record')
+					for(i = 0; i < list.length; i++) {
+						drug_brand = $(list[i]).find('drug_brand').text()
+						drug_name = $(list[i]).find('drug_name').text()
+						code = $(list[i]).find('code').text()
+						company = $(list[i]).find('company').text()
+						$('#result').append("drug brand : " + drug_brand + ", " + "<br>" +
+											"drug name : " + drug_name + ", " + "<br>" +
+											"code : " + code + ", " + "<br>" +
+											"company : " + company + "<br><br>")
+						
+						$.ajax({
+							url: "mock2.jsp",
+							data: {
+								drug_brand : drug_brand,
+								drug_name : drug_name,
+								code : code,
+								company : company
+							},
+							success: function() {
+								console.log('성공')
+							} // seccess
+						}) // ajax
+					} // for
+				} // success
+			}) // ajax
+		}) // b1
+	}) // $
+</script>
+</head>
+<body>
+<button id="b1">데이터 보기</button>
+<hr color="red">
+<div id="result"></div>
+</body>
+</html>
