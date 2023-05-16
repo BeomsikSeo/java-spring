@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mock">
+	
+	<insert id="create" parameterType="mockVO">
+		insert into mock2 values (#{drug_brand}, #{drug_name}, #{code}, #{company})
+	</insert>
+	
+	<delete id="delete"  parameterType="String">
+		delete from mock2 where code = #{code}
+	</delete>
+	
+	<update id="update"  parameterType="mockVO">
+		update mock2 set drug_name = #{drug_name} where code = #{code}
+	</update>
+	
+	<select id="one" parameterType="String" resultType="mockVO">
+		select * from
+		mock2
+		where code = #{code}
+	</select>
+	
+	<select id="all" resultType="mockVO">
+		select * from
+		mock2
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
