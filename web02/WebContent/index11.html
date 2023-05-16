@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+	$(function() { // body 태그 부분을 ram에 dom tree로 읽어와서 준비가 되면,
+		$('#b1').click(function() {
+			re = $("#reply").val()
+			divTag = $("#result")
+			divTag.append(re + "<br>")
+		}) // b1
+		$('#b2').click(function() {
+			divTag = $("#result")
+			divTag.append("<img src='img/ok.png' width='150' height='150'>")
+		}) // b2
+		$('#b3').click(function() {
+			re = $("#reply").val()
+			divTag = $("#result")
+			divTag.append("<img src='img/ok.png' width='150' height='150'>" + re + "<br>")
+			// divTag.append("<img src='img/ok.png' width='150' height='150'>")
+			// divTag.append(re + "<br>")
+		}) // b3
+	}) // $
+</script>
+</head>
+<body>
+댓글:
+<input id="reply" style="background: yellow" value="오늘 날이 추워">
+<button id="b1">글자 추가</button>
+<button id="b2">이미지 추가</button>
+<button id="b3">댓글 추가</button>
+<hr color="red">
+<div id="result"></div>
+</body>
+</html>
