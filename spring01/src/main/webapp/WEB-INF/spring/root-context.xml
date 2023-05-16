@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- 싱글톤 만들 때 어노테이션을 scan해서 싱글톤을 만들었음. -->
+	<!-- db연결하는 mybatis는 코드를 주지 않고, 번역된 파일인 class만 줌. -->
+	<!-- annotation으로 싱글톤을 만들 수가 없음. @Component 사용 불가. -->
+	<!-- 외부에서 가지고 온 클래스는 코드르 주지 않고, 번역된 파일인 class만 준다. -->
+	<!-- 어노테이션으로 싱글톤을 만들 수 없는 경우, root-context.xml파일에
+		 싱글톤으로 만들 객체를 지정해준다.!! -->
+</beans>
