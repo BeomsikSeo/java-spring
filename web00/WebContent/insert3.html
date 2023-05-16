@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	/* alert('게시판 글쓰기 페이지입니다.') */
+</script>
+
+<style type="text/css">
+body { /* 컨트롤 + / - 자동주석, 태그선택! */
+	background: #18de02;
+}
+
+.t1 { /* .은 클래스 선택!, 여러개 선택! */
+	background: yellow;
+	width: 150px;
+	text-align: center;
+}
+
+button {
+	background: pink;
+}
+
+#b1 { /* #은 아이디 선택!, 특정한 것 한 개만 선택! */
+	color: red;
+}
+
+#b2 {
+	color: blue;
+}
+</style>
+</head>
+<body>
+	<!-- no, title, content, writer 게시판글쓰기 -->
+	<h3>상품 등록 페이지</h3>
+	<hr>
+	<a href="bbs.html">
+		<button id="b1">첫페이지로</button>
+	</a>
+	<form action="insert3.jsp">
+		<!-- 받는 곳은 html 일 수 없음  -->
+		<table border="1">
+			<!-- <tr>
+				<td class="t1">번호 :</td>
+				<td><input name="no"></td>
+			</tr> -->
+			<tr>
+				<td class="t1">id :</td>
+				<td><input name="id"></td>
+			</tr>
+			<tr>
+				<td class="t1">name :</td>
+				<td><input name="name"></td>
+			</tr>
+			<tr>
+				<td class="t1">content :</td>
+				<td><input name="content"></td>
+			</tr>
+			<tr>
+				<td class="t1">price :</td>
+				<td><input name="price"></td>
+			</tr>
+			<tr>
+				<td class="t1">company :</td>
+				<td><input name="company"></td>
+			</tr>
+			<tr>
+				<td class="t1">img :</td>
+				<td><input name="img" type="file"></td>
+			<!-- 	<td><input name="img"></td> -->
+			</tr>
+			<tr>
+				<td colspan="2" class="t1">
+					<button id="b2">상품 등록 데이터 전송</button>
+				</td>
+			</tr>
+		</table>
+		<!--  입력한 값들이 서버(톰킷)으로 전달될때는 form 태그 안에 있어야 함. -->
+	</form>
+	<!-- 보충내용: <input name = "data"> -->
+</body>
+</html>
